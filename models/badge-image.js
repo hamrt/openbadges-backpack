@@ -46,8 +46,8 @@ BadgeImage.prototype.bakeAndSave = function (globalCallback) {
   }.bind(this)
 
   const saveImage = function saveImage(bakedImageData, callback) {
-    const b64image = Buffer(bakedImageData).toString('base64')
-    this.set('image_data', b64image)
+    const b64image = new Buffer(bakedImageData).toString('base64');
+    this.set('image_data', new Buffer (b64image))
     this.set('baked', true)
     this.save(callback)
   }.bind(this)
