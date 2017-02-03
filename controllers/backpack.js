@@ -462,7 +462,7 @@ exports.userBadgeUpload = function userBadgeUpload(req, res) {
       bakery.extract(imageData, callback);
     },
     function getAssertionData(url, callback) {
-      const data = getUrlOrSignature(url)
+      const data = getUrlOrSignature(url.value)
       awardOptions[data.type] = data.value;
       analyzeAssertion(data.value, callback);
     },
